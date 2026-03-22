@@ -1,0 +1,4 @@
+take the background color for the this page from this https://geospatialconsulting.github.io/.
+  keep the color gradient from dark blue to ligh blue on the second page. apply the same
+  gradient for the second page to light white. the get in touch part is in the white aera. use
+the same green aera under Ai ingenierubüro as foot note
