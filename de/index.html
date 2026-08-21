@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geospatial ML for Environment &amp; Agriculture · Dr.-Ing. Michael Marszalek</title>
+  <title>Geospatiales ML für Umwelt &amp; Agrar · Dr.-Ing. Michael Marszalek</title>
   <meta name="description"
-    content="Independent engineering consultancy for geospatial machine learning in environment and agriculture. Satellite and climate data turned into yield models, climate-risk assessments and production EO pipelines. Dr.-Ing. TUM, former ESA Research Fellow and DLR senior researcher." />
-  <link rel="canonical" href="https://geospatialconsulting.de/" />
+    content="Unabhängiges Ingenieurbüro für geospatiales Machine Learning in Umwelt und Agrar. Aus Satelliten- und Klimadaten werden Ertragsmodelle, Klimarisiko-Analysen und produktive Erdbeobachtungs-Pipelines. Dr.-Ing. TUM, ehem. ESA Research Fellow und Senior Researcher am DLR." />
+  <link rel="canonical" href="https://geospatialconsulting.de/de/" />
   <link rel="alternate" hreflang="en" href="https://geospatialconsulting.de/" />
   <link rel="alternate" hreflang="de" href="https://geospatialconsulting.de/de/" />
   <link rel="alternate" hreflang="x-default" href="https://geospatialconsulting.de/" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en" />
+  <meta property="og:locale" content="de" />
   <meta property="og:site_name" content="AI Ingenieurbüro Marszalek" />
-  <meta property="og:url" content="https://geospatialconsulting.de/" />
-  <meta property="og:title" content="Geospatial ML for Environment &amp; Agriculture" />
+  <meta property="og:url" content="https://geospatialconsulting.de/de/" />
+  <meta property="og:title" content="Geospatiales ML für Umwelt &amp; Agrar" />
   <meta property="og:description"
-    content="Satellite and climate data turned into yield models, climate-risk assessments and production EO pipelines." />
+    content="Aus Satelliten- und Klimadaten werden Ertragsmodelle, Klimarisiko-Analysen und produktive EO-Pipelines." />
   <meta name="twitter:card" content="summary" />
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23060d1a'/><circle cx='16' cy='16' r='8.5' fill='none' stroke='%2300c6a7' stroke-width='2'/><ellipse cx='16' cy='16' rx='8.5' ry='3.4' fill='none' stroke='%234fa3e0' stroke-width='1.4'/></svg>" />
@@ -26,9 +26,9 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "AI Ingenieurbüro Dr.-Ing. Michael Marszalek",
-      "url": "https://geospatialconsulting.de/",
+      "url": "https://geospatialconsulting.de/de/",
       "email": "michael_marszalek@web.de",
-      "description": "Geospatial machine learning consulting for environment and agriculture: Earth observation, climate analytics, crop yield and risk modelling, carbon and soil monitoring.",
+      "description": "Beratung für geospatiales Machine Learning in Umwelt und Agrar: Erdbeobachtung, Klimaanalytik, Ertrags- und Risikomodellierung, Kohlenstoff- und Boden-Monitoring.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "c/o MDC#geospatial, Welserstraße 3",
@@ -806,14 +806,10 @@
     (function () {
       var KEY = 'lang';
       function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-      // Entry page only: a stored choice wins, otherwise follow the browser's language.
-      if (/(\/|\/index\.html)$/.test(location.pathname) && location.pathname.indexOf('/de/') === -1) {
-        var want = stored();
-        if (!want) {
-          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-          want = nav.toLowerCase().indexOf('de') === 0 ? 'de' : 'en';
-        }
-        if (want === 'de') location.replace('de/');
+      // German entry page: only an explicit earlier choice sends you to English.
+      // A visitor who asked for /de/ is never auto-redirected away from it.
+      if (/\/de\/(index\.html)?$/.test(location.pathname) && stored() === 'en') {
+        location.replace('../');
       }
       document.addEventListener('click', function (e) {
         var a = e.target && e.target.closest && e.target.closest('.lang-switch a');
@@ -831,12 +827,12 @@
   <nav>
     <div class="nav-logo"><span>ML</span> <span class="logo-rest">Marszalek</span></div>
     <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="projects.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="#contact">Contact</a>
-      <span class="lang-switch"><a class="on" href="index.html">EN</a><span class="lang-sep">/</span><a
-          href="de/index.html">DE</a></span>
+      <a href="#services">Leistungen</a>
+      <a href="projekte.html">Portfolio</a>
+      <a href="ueber-mich.html">Über mich</a>
+      <a href="#contact">Kontakt</a>
+      <span class="lang-switch"><a href="../index.html">EN</a><span class="lang-sep">/</span><a class="on"
+          href="index.html">DE</a></span>
     </div>
   </nav>
 
@@ -1044,15 +1040,15 @@
     </svg>
 
     <div class="container hero-inner">
-      <div class="hero-label">Available for consulting</div>
+      <div class="hero-label">Verfügbar für Projekte</div>
       <h1>Geospatial Intelligence<br>&amp; <span>Applied ML</span></h1>
       <p class="hero-sub">
-        I build production-ready AI systems that extract insight from satellite imagery,
-        time series, and multimodal environmental data — turning raw signals into
-        operational, data-driven services.
+        Ich entwickle produktionsreife KI-Systeme, die aus Satellitenbildern, Zeitreihen und
+        multimodalen Umweltdaten Erkenntnisse gewinnen — und rohe Signale in operative,
+        datengetriebene Services verwandeln.
       </p>
-      <a href="#contact" class="btn">Get in touch</a>
-      <a href="projects.html" class="btn-ghost">Portfolio</a>
+      <a href="#contact" class="btn">Kontakt aufnehmen</a>
+      <a href="projekte.html" class="btn-ghost">Portfolio</a>
     </div>
   </section>
 
@@ -1060,10 +1056,10 @@
   <section id="services">
 
     <div class="container" style="position:relative;z-index:1;">
-      <div class="section-label">What I do</div>
-      <h2>Consulting Services</h2>
+      <div class="section-label">Was ich mache</div>
+      <h2>Leistungen</h2>
       <p class="section-intro" style="font-size:1.15rem;font-weight:600;">
-        15 years of expertise from aerospace to product deployment.
+        15 Jahre Erfahrung — von der Raumfahrt bis zum ausgelieferten Produkt.
       </p>
 
       <!-- Cloud-shaped service items -->
@@ -1074,7 +1070,7 @@
               d="M50,85 Q20,85 20,62 Q20,42 38,40 Q36,18 58,15 Q72,4 90,12 Q102,2 120,8 Q140,0 155,14 Q175,8 188,22 Q210,20 218,38 Q234,40 234,58 Q234,85 205,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Environment &amp; Climate Analytics</span>
+          <span>Umwelt- &amp; Klimaanalytik</span>
         </div>
         <div class="cloud-item">
           <svg viewBox="0 0 280 110" xmlns="http://www.w3.org/2000/svg" class="cloud-shape" aria-hidden="true">
@@ -1082,7 +1078,7 @@
               d="M55,85 Q22,85 22,60 Q22,40 42,38 Q40,16 64,13 Q78,2 98,10 Q112,0 132,7 Q155,0 170,15 Q192,8 206,24 Q228,22 236,42 Q252,44 252,62 Q252,85 220,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Machine Learning & Time Series<br>&amp; Computer Vision</span>
+          <span>Machine Learning, Zeitreihen<br>&amp; Computer Vision</span>
         </div>
         <div class="cloud-item">
           <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg" class="cloud-shape" aria-hidden="true">
@@ -1090,7 +1086,7 @@
               d="M48,85 Q18,85 18,60 Q18,40 36,38 Q34,16 56,13 Q70,2 88,10 Q102,0 120,7 Q142,0 156,15 Q176,8 188,24 Q208,22 216,42 Q228,44 228,62 Q228,85 198,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Agent-Based Workflows</span>
+          <span>Agentenbasierte Workflows</span>
         </div>
         <div class="cloud-item">
           <svg viewBox="0 0 270 110" xmlns="http://www.w3.org/2000/svg" class="cloud-shape" aria-hidden="true">
@@ -1098,7 +1094,7 @@
               d="M52,85 Q20,85 20,60 Q20,40 40,38 Q38,16 62,13 Q76,2 96,10 Q110,0 130,7 Q152,0 168,15 Q190,8 204,24 Q226,22 234,42 Q248,44 248,62 Q248,85 216,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Multimodal Representation Learning</span>
+          <span>Multimodales Representation Learning</span>
         </div>
         <div class="cloud-item">
           <svg viewBox="0 0 230 110" xmlns="http://www.w3.org/2000/svg" class="cloud-shape" aria-hidden="true">
@@ -1106,7 +1102,7 @@
               d="M46,85 Q16,85 16,60 Q16,40 34,38 Q32,16 54,13 Q68,2 86,10 Q100,0 118,7 Q138,0 152,15 Q172,8 184,24 Q204,22 212,42 Q222,44 222,62 Q222,85 192,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Product Deployment</span>
+          <span>Produkt-Deployment</span>
         </div>
         <div class="cloud-item">
           <svg viewBox="0 0 230 110" xmlns="http://www.w3.org/2000/svg" class="cloud-shape" aria-hidden="true">
@@ -1114,7 +1110,7 @@
               d="M46,85 Q16,85 16,60 Q16,40 34,38 Q32,16 54,13 Q68,2 86,10 Q100,0 118,7 Q138,0 152,15 Q172,8 184,24 Q204,22 212,42 Q222,44 222,62 Q222,85 192,85 Z"
               fill="white" fill-opacity=".7" stroke="white" stroke-opacity=".5" stroke-width="1" />
           </svg>
-          <span>Feasibility Studies<br>for Potential Services</span>
+          <span>Machbarkeitsstudien<br>für potenzielle Services</span>
         </div>
       </div>
     </div>
@@ -1123,36 +1119,36 @@
   <!-- AUDIENCE -->
   <section id="audience">
     <div class="container">
-      <div class="aud-label">Who I work with</div>
+      <div class="aud-label">Für wen</div>
       <div class="aud-grid">
         <div class="aud-card">
-          <div class="aud-who">Companies</div>
-          <div class="aud-what"><b>Freelance engagements</b> &mdash; time series, computer vision, agent systems and
-            data pipelines, built for your stack and handed over so your own team can run them.</div>
+          <div class="aud-who">Unternehmen</div>
+          <div class="aud-what"><b>Freiberufliche Mandate</b> &mdash; Zeitreihen, Computer Vision, Agentensysteme und
+            Datenpipelines, entwickelt für Ihren Stack und so übergeben, dass Ihr Team sie selbst betreibt.</div>
         </div>
         <div class="aud-card">
-          <div class="aud-who">Engineering offices</div>
-          <div class="aud-what"><b>As a subcontractor or in a bidding consortium</b> &mdash; for projects that are too
-            large for one person alone. </div>
+          <div class="aud-who">Ingenieurbüros</div>
+          <div class="aud-what"><b>Im Unterauftrag oder als Bietergemeinschaft</b> &mdash; für Projekte, die für einen
+            allein zu groß sind. </div>
         </div>
         <div class="aud-card">
-          <div class="aud-who">Municipalities &amp; districts</div>
-          <div class="aud-what"><b>Environmental and Climate Adaptation Strategies</b> based on satellite, drone, and
-            climate data.</div>
+          <div class="aud-who">Kommunen &amp; Landkreise</div>
+          <div class="aud-what"><b>Umwelt- und Klimaanpassungskonzepte</b> basierend auf Satelliten-, Drohnen- und
+            Klimadaten.</div>
         </div>
       </div>
-      <p class="aud-note">Your problem doesn't fit any of these? Those are usually the interesting ones
-        &mdash; write to me.</p>
+      <p class="aud-note">Ihr Problem passt in keine dieser Schubladen? Das sind meist die interessantesten
+        &mdash; schreiben Sie mir.</p>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="section-label">Contact</div>
-      <h2>Let&rsquo;s talk about it</h2>
+      <div class="section-label">Kontakt</div>
+      <h2>Sprechen wir darüber</h2>
 
-      <p class="section-intro">Open to consulting engagements, research collaborations, and project-based work.</p>
+      <p class="section-intro">Offen für Beratungsmandate, Forschungskooperationen und Projektarbeit.</p>
 
       <div class="contact-layout"
         style="display:flex;flex-direction:column;gap:1rem;align-items:center;text-align:center;">
@@ -1163,9 +1159,9 @@
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
           </svg>
-          Write me an e-mail
+          Schreiben Sie mir eine E-Mail
         </a>
-        <p style="font-size:.85rem;color:#5d7590;margin:-.35rem 0 0;">I reply within one working day.</p>
+        <p style="font-size:.85rem;color:#5d7590;margin:-.35rem 0 0;">Ich antworte innerhalb eines Werktags.</p>
         <a href="https://www.linkedin.com/in/michael-marszalek/" target="_blank" rel="noopener"
           style="display:inline-flex;align-items:center;gap:.5rem;color:#0a66c2;font-weight:600;font-size:.9rem;text-decoration:none;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2"
@@ -1173,7 +1169,7 @@
             <path
               d="M20.447 20.452H17.01v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.585V9h3.297v1.561h.046c.459-.869 1.582-1.785 3.255-1.785 3.483 0 4.126 2.292 4.126 5.271v6.405zM5.337 7.433a1.91 1.91 0 1 1 0-3.82 1.91 1.91 0 0 1 0 3.82zm1.648 13.019H3.689V9h3.296v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
           </svg>
-          Connect on LinkedIn
+          Auf LinkedIn vernetzen
         </a>
       </div>
     </div>
@@ -1183,8 +1179,8 @@
 
   <footer>
     <p>AI Ingenieurbüro &mdash; Geospatial Data Science &amp; ML Consulting</p>
-    <button class="imp-link" id="imp-open">Legal Notice</button>
-    <button class="imp-link" id="dse-open">Privacy Policy</button>
+    <button class="imp-link" id="imp-open">Impressum</button>
+    <button class="imp-link" id="dse-open">Datenschutzerklärung</button>
   </footer>
 
 
@@ -1266,85 +1262,93 @@
   </script>
 
   <!-- IMPRESSUM MODAL -->
-  <div class="imp-overlay" id="imp-overlay" role="dialog" aria-modal="true" aria-label="Legal Notice">
+  <div class="imp-overlay" id="imp-overlay" role="dialog" aria-modal="true" aria-label="Impressum">
     <div class="imp-box">
-      <button class="imp-close" id="imp-close" aria-label="Close">&times;</button>
-      <h2>Legal Notice</h2>
+      <button class="imp-close" id="imp-close" aria-label="Schließen">&times;</button>
+      <h2>Impressum</h2>
 
-      <h3>Information pursuant to § 5 DDG</h3>
+      <h3>Angaben gemäß § 5 DDG</h3>
       <p>
         AI Ingenieurbüro<br>
         Dr.-Ing. Michael Marszalek<br>
         c/o MDC#geospatial<br>
         Welserstraße 3<br>
-        87463 Dietmannsried, Germany
+        87463 Dietmannsried
       </p>
 
-      <h3>Contact</h3>
+      <h3>Kontakt</h3>
       <p>
         E-Mail: <a href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>
       </p>
 
-      <h3>VAT</h3>
+      <h3>Umsatzsteuer</h3>
       <p>USt-IdNr. DE457092812</p>
 
-      <h3>Responsible for content pursuant to § 18 (2) MStV</h3>
+      <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
       <p>Dr.-Ing. Michael Marszalek</p>
     </div>
   </div>
 
   <!-- PRIVACY POLICY MODAL -->
-  <div class="imp-overlay" id="dse-overlay" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+  <div class="imp-overlay" id="dse-overlay" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung">
     <div class="imp-box">
-      <button class="imp-close" id="dse-close" aria-label="Close">&times;</button>
-      <h2>Privacy Policy</h2>
+      <button class="imp-close" id="dse-close" aria-label="Schließen">&times;</button>
+      <h2>Datenschutzerklärung</h2>
 
-      <h3>1. Controller</h3>
+      <h3>1. Verantwortlicher</h3>
       <p>
         Dr.-Ing. Michael Marszalek<br>
-        c/o MDC#geospatial, Welserstraße 3, 87463 Dietmannsried, Germany<br>
+        c/o MDC#geospatial, Welserstraße 3, 87463 Dietmannsried<br>
         E-Mail: <a href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>
       </p>
 
-      <h3>2. Cookies and local storage</h3>
-      <p>This website uses no cookies and no tracking technology. If you pick a language with the EN/DE
-        switch, that choice alone is saved in your browser's local storage (key &ldquo;lang&rdquo;) so the
-        site opens in the language you chose. It never leaves your device, is not transmitted to us or to
-        any third party, and you can delete it at any time in your browser settings. Storing it is
-        strictly necessary to provide the language function you asked for, so no consent under
-        § 25 (2) no. 2 TDDDG is required. Nothing else is written to or read from your device, and your IP
-        address is not used to determine the language.</p>
+      <h3>2. Cookies und lokale Speicherung</h3>
+      <p>Diese Website verwendet keine Cookies und keine Tracking-Technologien. Wenn Sie über den
+        EN/DE-Schalter eine Sprache wählen, wird ausschließlich diese Auswahl im lokalen Speicher Ihres
+        Browsers abgelegt (Schlüssel &bdquo;lang&ldquo;), damit die Website in der von Ihnen gewählten
+        Sprache öffnet. Sie verlässt Ihr Endgerät nicht, wird weder an uns noch an Dritte übermittelt und
+        kann jederzeit in den Browser-Einstellungen gelöscht werden. Die Speicherung ist zur
+        Bereitstellung der von Ihnen ausdrücklich gewünschten Sprachfunktion unbedingt erforderlich; eine
+        Einwilligung nach § 25 Abs. 2 Nr. 2 TDDDG ist daher nicht erforderlich. Darüber hinaus werden
+        keine Informationen auf Ihrem Endgerät gespeichert oder ausgelesen; Ihre IP-Adresse wird für die
+        Sprachauswahl nicht verwendet.</p>
 
-      <h3>3. Contact via email</h3>
-      <p>When you contact us by email, your message and email address are processed solely for the purpose of responding
-        to your enquiry. No data is shared with third parties. The legal basis is Art. 6(1)(f) GDPR (legitimate interest
-        in responding to enquiries).</p>
+      <h3>3. Kontaktaufnahme per E-Mail</h3>
+      <p>Wenn Sie uns per E-Mail kontaktieren, werden Ihre Nachricht und Ihre E-Mail-Adresse
+        ausschließlich zur Bearbeitung Ihrer Anfrage verarbeitet. Eine Weitergabe an Dritte erfolgt
+        nicht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+        Beantwortung von Anfragen).</p>
 
-      <h3>4. Web analytics</h3>
-      <p>This website uses Plausible Analytics, a privacy-focused analytics service by Plausible Insights
-        OÜ, Estonia, running on servers inside the European Union. Plausible sets no cookies and creates
-        no cross-site or cross-session identifier, so individual visitors cannot be recognised or tracked
-        over time. Recorded are the page requested, the referring website, browser, operating system,
-        device type and country. Your IP address is used only transiently to derive the country and to
-        generate a daily-rotating, non-reversible hash, and is never written to disk. The resulting data
-        is aggregated and cannot be traced back to you. No data is passed to third parties and no data
-        leaves the EU. The legal basis is Art. 6(1)(f) GDPR — our legitimate interest in understanding,
-        in aggregate, how this website is used. Details: <a href="https://plausible.io/data-policy" target="_blank"
-          rel="noopener">plausible.io/data-policy</a>.</p>
+      <h3>4. Webanalyse</h3>
+      <p>Diese Website nutzt Plausible Analytics, einen datenschutzfreundlichen Analysedienst der
+        Plausible Insights OÜ, Estland, betrieben auf Servern innerhalb der Europäischen Union.
+        Plausible setzt keine Cookies und bildet keine seiten- oder sitzungsübergreifende Kennung;
+        einzelne Besucher können dadurch weder wiedererkannt noch über die Zeit verfolgt werden.
+        Erfasst werden die aufgerufene Seite, die verweisende Website, Browser, Betriebssystem,
+        Gerätetyp und Land. Ihre IP-Adresse wird ausschließlich vorübergehend verwendet, um das Land
+        zu bestimmen und einen täglich wechselnden, nicht umkehrbaren Hash zu bilden; sie wird zu
+        keinem Zeitpunkt gespeichert. Die entstehenden Daten sind aggregiert und lassen keinen
+        Rückschluss auf Sie zu. Eine Weitergabe an Dritte findet nicht statt, die Daten verlassen die
+        EU nicht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO — unser berechtigtes Interesse daran,
+        in aggregierter Form nachzuvollziehen, wie diese Website genutzt wird. Näheres:
+        <a href="https://plausible.io/data-policy" target="_blank" rel="noopener">plausible.io/data-policy</a>.
+      </p>
 
       <h3>5. Hosting</h3>
-      <p>This website is hosted via GitHub Pages (GitHub, Inc., USA). When accessing the site, GitHub may log technical
-        access data including your IP address. For more information: <a
-          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
-          target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+      <p>Diese Website wird über GitHub Pages (GitHub, Inc., USA) bereitgestellt. Beim Aufruf der Seite
+        kann GitHub technische Zugriffsdaten einschließlich Ihrer IP-Adresse protokollieren. Näheres:
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+      </p>
 
-      <h3>6. Your rights</h3>
-      <p>You have the right of access, rectification, erasure, restriction of processing, data
-        portability and objection regarding your personal data. Because the analytics data described
-        above is aggregated and holds no identifier tied to you, we are generally unable to link it to a
-        specific person. For any privacy-related question contact us at <a
-          href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>. You may also lodge a
-        complaint with the competent supervisory authority.</p>
+      <h3>6. Ihre Rechte</h3>
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+        Datenübertragbarkeit und Widerspruch bezüglich Ihrer personenbezogenen Daten. Da die oben
+        beschriebenen Analysedaten aggregiert sind und keine Ihnen zuordenbare Kennung enthalten,
+        ist uns eine Zuordnung zu einer bestimmten Person in der Regel nicht möglich. Bei Fragen zum
+        Datenschutz wenden Sie sich an <a href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>. Ihnen
+        steht zudem ein
+        Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
     </div>
   </div>
 

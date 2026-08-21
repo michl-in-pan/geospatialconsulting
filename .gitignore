@@ -1,1 +1,8 @@
 *.md
+# large source media — the web-optimised derivatives in images/ are committed instead
+images/Michael.jpg
+images/embeddings_trained.mov
+*:Zone.Identifier
+images/Michael.png
+images/michael2.jpg
+images/Screenshot*.png

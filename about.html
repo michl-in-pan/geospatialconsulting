@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Dr.-Ing. Michael Marszalek — Geospatial ML for Environment &amp; Agriculture</title>
+  <meta name="description"
+    content="Fifteen years from ESA feasibility studies through a failed startup, a doctorate in precision farming and remote sensing, and a research fellowship at ESA, to an independent engineering practice for geospatial machine learning." />
+  <link rel="canonical" href="https://geospatialconsulting.de/about.html" />
+  <link rel="alternate" hreflang="en" href="https://geospatialconsulting.de/about.html" />
+  <link rel="alternate" hreflang="de" href="https://geospatialconsulting.de/de/ueber-mich.html" />
+  <link rel="alternate" hreflang="x-default" href="https://geospatialconsulting.de/about.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:site_name" content="AI Ingenieurbüro Marszalek" />
+  <meta property="og:url" content="https://geospatialconsulting.de/about.html" />
+  <meta property="og:title" content="About — Dr.-Ing. Michael Marszalek" />
+  <meta property="og:description"
+    content="From ESA feasibility studies and a failed startup to an independent engineering practice for geospatial machine learning." />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23060d1a'/><circle cx='16' cy='16' r='8.5' fill='none' stroke='%2300c6a7' stroke-width='2'/><ellipse cx='16' cy='16' rx='8.5' ry='3.4' fill='none' stroke='%234fa3e0' stroke-width='1.4'/></svg>" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr.-Ing. Michael Marszalek",
+      "jobTitle": "Geospatial Data Scientist & ML Engineer",
+      "url": "https://geospatialconsulting.de/about.html",
+      "email": "michael_marszalek@web.de",
+      "sameAs": "https://www.linkedin.com/in/michael-marszalek/",
+      "alumniOf": "Technical University of Munich",
+      "worksFor": {
+        "@type": "ProfessionalService",
+        "name": "AI Ingenieurbüro Dr.-Ing. Michael Marszalek",
+        "url": "https://geospatialconsulting.de/"
+      },
+      "knowsAbout": [
+        "Earth observation",
+        "Remote sensing",
+        "Machine learning",
+        "Self-supervised learning",
+        "Precision agriculture"
+      ]
+    }
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* light page tokens */
+      --bg: #ffffff;
+      --surface: #f4f9fd;
+      --border: #d9e6f2;
+      --teal: #007865;
+      --teal-dim: #005c4d;
+      --teal-bright: #00c6a7;
+      --blue: #2b6ca8;
+      --text: #0c1e33;
+      --muted: #5d7590;
+      /* dark tokens, kept for the nav, the figure panels and their SVGs */
+      --ink: #060d1a;
+      --ink-surface: #0b1728;
+      --ink-border: #16263d;
+      --ink-text: #e2eaf4;
+      --ink-muted: #8ba3bd;
+      --radius: 10px;
+      --max: 900px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--blue);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(6, 13, 26, .88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--ink-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .03em;
+      color: var(--ink-text);
+    }
+
+    .nav-logo span {
+      color: var(--teal-bright);
+    }
+
+    .nav-logo .logo-rest {
+      color: inherit;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: .875rem;
+    }
+
+    .nav-links a {
+      color: var(--ink-muted);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--teal-bright);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .8rem;
+    }
+
+    .lang-switch a {
+      color: var(--ink-muted);
+    }
+
+    .lang-switch a.on {
+      color: var(--ink-text);
+      font-weight: 700;
+    }
+
+    .lang-sep {
+      color: #33507a;
+    }
+
+    /* ── PAGE HEAD — Sentinel-2 atolls fading into the white page ── */
+    .page-head {
+      padding: 150px 2rem 7rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        url("images/atolls-sentinel2.jpg") center 38% / cover no-repeat,
+        var(--ink);
+    }
+
+    .page-head::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+          rgba(6, 13, 26, .80) 0%,
+          rgba(6, 13, 26, .52) 26%,
+          rgba(9, 20, 38, .30) 46%,
+          rgba(190, 216, 236, .55) 68%,
+          rgba(246, 250, 253, .93) 86%,
+          #ffffff 100%);
+      pointer-events: none;
+    }
+
+    .page-head .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: .9rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal-bright);
+      margin-bottom: .5rem;
+      text-shadow: 0 1px 10px rgba(6, 13, 26, .8);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(6, 13, 26, .55);
+    }
+
+    h1 span {
+      color: var(--teal-bright);
+    }
+
+    .lede {
+      color: #cfdcea;
+      max-width: 620px;
+      font-size: 1.02rem;
+      text-shadow: 0 1px 12px rgba(6, 13, 26, .6);
+    }
+
+    .img-credit {
+      position: absolute;
+      right: 1.1rem;
+      bottom: .5rem;
+      z-index: 1;
+      font-size: .66rem;
+      line-height: 1.4;
+      color: var(--muted);
+      text-align: right;
+      max-width: 60%;
+    }
+
+    .img-credit a {
+      color: inherit;
+      text-decoration: underline dotted;
+    }
+
+    /* ── CLIENTS ── */
+    .clients {
+      padding: 3.5rem 2rem 0;
+    }
+
+    .clients-title {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .logo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo-tile {
+      flex: 1 1 260px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .logo-tile:hover {
+      border-color: rgba(0, 198, 167, .45);
+      transform: translateY(-2px);
+    }
+
+    .logo-tile svg {
+      flex: 0 0 auto;
+    }
+
+    .logo-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .logo-role {
+      font-size: .76rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── CASE STUDIES ── */
+    .cases {
+      padding: 4.5rem 2rem 1rem;
+    }
+
+    .case {
+      border-top: 1px solid var(--border);
+      padding-top: 3.2rem;
+      margin-top: 3.2rem;
+    }
+
+    .case:first-of-type {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .case-kicker {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: .5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -.01em;
+      margin-bottom: .8rem;
+    }
+
+    .case-sub {
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+
+    /* Figure panels stay dark: the schematics are drawn light-on-dark. */
+    figure {
+      background: var(--ink-surface);
+      border: 1px solid var(--ink-border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.4rem 1rem;
+      margin: 0 0 2.2rem;
+      overflow: hidden;
+    }
+
+    figure svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      font-size: .78rem;
+      color: var(--ink-muted);
+      margin-top: .9rem;
+      line-height: 1.55;
+    }
+
+    /* white-background media (the embedding animation) gets a light panel */
+    figure.fig-light {
+      background: #fff;
+      border-color: var(--border);
+    }
+
+    figure.fig-light figcaption {
+      color: var(--muted);
+    }
+
+    figure video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    h3 {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 2rem 0 .6rem;
+    }
+
+    .case p {
+      color: #2c435d;
+      font-size: .95rem;
+      max-width: 680px;
+    }
+
+    .case ul {
+      list-style: none;
+      max-width: 680px;
+    }
+
+    .case li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: .5rem;
+      font-size: .95rem;
+      color: #2c435d;
+    }
+
+    .case li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .68em;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: var(--teal);
+      opacity: .8;
+    }
+
+    /* result stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: .9rem;
+      margin: 1.2rem 0 .4rem;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.1rem;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: -.01em;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      font-size: .76rem;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-top: .2rem;
+    }
+
+    /* tech tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: .6rem;
+    }
+
+    .tag {
+      font-size: .74rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 11px;
+      background: var(--surface);
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 4rem 2rem 4.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3.5rem;
+    }
+
+    .cta h2 {
+      margin-bottom: .5rem;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      max-width: 560px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal-bright);
+      color: #05261f;
+      font-weight: 700;
+      font-size: .875rem;
+      padding: 11px 26px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      margin-right: 12px;
+    }
+
+    .btn:hover {
+      background: #00a88e;
+      color: #05261f;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: .875rem;
+      padding: 11px 26px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: border-color .2s, color .2s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem 1rem 2.6rem;
+    }
+
+    footer>p {
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .imp-link {
+      font-size: .78rem;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: underline dotted;
+      display: block;
+      margin: .45rem auto 0;
+    }
+
+    .imp-link:hover {
+      color: var(--text);
+    }
+
+    /* ── MODALS ── */
+    .imp-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 13, 26, .62);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 2rem 1rem;
+    }
+
+    .imp-overlay.open {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .imp-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 50px rgba(6, 13, 26, .22);
+      border-radius: var(--radius);
+      max-width: 580px;
+      width: 100%;
+      padding: 2.5rem 2.5rem 2rem;
+      position: relative;
+      margin: auto;
+    }
+
+    .imp-box h2 {
+      font-size: 1.25rem;
+      color: var(--teal);
+      margin-bottom: 1.6rem;
+    }
+
+    .imp-box h3 {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--muted);
+      margin: 1.4rem 0 .35rem;
+    }
+
+    .imp-box p {
+      font-size: .92rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .imp-close {
+      position: absolute;
+      top: 1rem;
+      right: 1.1rem;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .imp-close:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 .9rem;
+      }
+
+      .nav-logo {
+        font-size: .88rem;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        gap: .7rem;
+        font-size: .78rem;
+        align-items: center;
+      }
+
+      .lang-switch {
+        font-size: .72rem;
+        gap: .2rem;
+      }
+
+      .page-head {
+        padding-top: 110px;
+      }
+
+      .cases,
+      .clients,
+      .cta {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+
+      .page-head {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+    }
+  </style>
+  <style>
+    /* ── ABOUT PAGE ── */
+    .page-head {
+      min-height: 520px;
+    }
+
+    .about {
+      padding: 3rem 2rem 4.5rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2.6rem;
+      align-items: start;
+    }
+
+    .portrait {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 0;
+      margin: 0;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .portrait figcaption {
+      color: var(--muted);
+      padding: .75rem .9rem .85rem;
+      margin: 0;
+      font-size: .76rem;
+    }
+
+    .about-text p {
+      color: #2c435d;
+      font-size: 1rem;
+      margin-bottom: 1.1rem;
+      max-width: 620px;
+    }
+
+    .about-text p.pull {
+      font-size: 1.12rem;
+      line-height: 1.6;
+      color: var(--text);
+      font-weight: 600;
+      border-left: 3px solid var(--teal-bright);
+      padding-left: 1.1rem;
+      margin: 1.8rem 0;
+    }
+
+    .profiles {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: .55rem;
+      margin-top: .3rem;
+    }
+
+    .profile-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      color: #0a66c2;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .profile-link:hover {
+      color: #07508f;
+    }
+
+    .profile-link.scholar {
+      color: var(--teal);
+    }
+
+    .profile-link.scholar:hover {
+      color: var(--teal-dim);
+    }
+
+    @media (max-width: 700px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+
+      .portrait {
+        max-width: 240px;
+      }
+
+      .about {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav {
+        padding: 0 .65rem;
+      }
+
+      .logo-rest {
+        display: none;
+      }
+
+      .nav-links {
+        gap: .55rem;
+        font-size: .74rem;
+      }
+
+      .lang-switch {
+        font-size: .7rem;
+      }
+    }
+  </style>
+  <script defer data-domain="geospatialconsulting.de" src="https://plausible.io/js/script.js"></script>
+  <script>
+    /* Language preference — no IP lookup and no third-party request. An explicit
+       EN/DE click is remembered in localStorage; first-time visitors landing on the
+       site root follow their own browser language. */
+    (function () {
+      var KEY = 'lang';
+      function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest && e.target.closest('.lang-switch a');
+        if (!a) return;
+        var v = (a.textContent || '').trim().toLowerCase();
+        if (v === 'en' || v === 'de') { try { localStorage.setItem(KEY, v); } catch (err) { } }
+      });
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><span>ML</span> <span class="logo-rest">Marszalek</span></div>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="projects.html">Portfolio</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#contact">Contact</a>
+      <span class="lang-switch"><a class="on" href="about.html">EN</a><span class="lang-sep">/</span><a
+          href="de/ueber-mich.html">DE</a></span>
+    </div>
+  </nav>
+
+  <!-- PAGE HEAD -->
+  <header class="page-head">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h1>Fifteen years, one <span>through-line</span></h1>
+      <p class="lede">
+        Satellites, models, and the stubborn question of whether the number on the screen means
+        anything outside the room it was produced in.
+      </p>
+    </div>
+    <p class="img-credit">
+      Ari Atoll, Maldives — contains modified Copernicus Sentinel-2 data.<br>
+      © ESA, <a href="https://creativecommons.org/licenses/by-sa/3.0/igo/" target="_blank" rel="noopener">CC BY-SA 3.0
+        IGO</a>
+    </p>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <figure class="portrait">
+          <img src="images/michael.jpg" width="800" height="800" alt="Portrait of Dr.-Ing. Michael Marszalek" />
+          <figcaption>Dr.-Ing. Michael Lukas Marszalek</figcaption>
+        </figure>
+
+        <div class="about-text">
+          <p>
+            My path started fifteen years ago with ESA feasibility studies, developing satellite-based
+            services together with various stakeholders. That work grew
+            into my own startup &mdash; which failed in the end, but which decided everything that came
+            after it.
+          </p>
+          <p>
+            I did my doctorate in precision farming, remote sensing and machine learning, and then
+            worked at ESA as a postdoctoral researcher, among other things on hybrid models and on
+            domain adaptation with self-supervised learning.
+          </p>
+          <p>
+            Today, I work with clients on data and machine learning solutions through my own engineering
+            practice.
+          </p>
+          <p>
+            The way I work is still shaped by systems engineering: clarify the requirements, define the
+            interfaces, make the assumptions explicit and verify them before anything gets built. In the
+            age of agent systems those principles have become more valuable, not less &mdash; when code
+            appears in minutes, what decides the outcome is whether the right thing was built and
+            whether you can check that it works.
+          </p>
+          <p>
+            Where the road leads in the long run is still open &mdash; and that is precisely what makes
+            it interesting.
+          </p>
+          <p class="pull">
+            What these fifteen years taught me is that I cannot accept work without real value.
+            What drives me is building solutions that solve actual problems and create impact.
+          </p>
+          <p>
+            If that sounds like the kind of engagement you have in mind,
+            <a href="projects.html">the case studies</a> show how it looks in practice, or just
+            <a href="mailto:michael_marszalek@web.de">send me an e-mail</a> — I reply within one
+            working day.
+          </p>
+          <p>
+            Career history and publications:
+          </p>
+          <div class="profiles">
+            <a class="profile-link" href="https://www.linkedin.com/in/michael-marszalek/" target="_blank"
+              rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#0a66c2"
+                aria-hidden="true">
+                <path
+                  d="M20.447 20.452H17.01v-5.569c0-1.328-.024-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.585V9h3.297v1.561h.046c.459-.869 1.582-1.785 3.255-1.785 3.483 0 4.126 2.292 4.126 5.271v6.405zM5.337 7.433a1.91 1.91 0 1 1 0-3.82 1.91 1.91 0 0 1 0 3.82zm1.648 13.019H3.689V9h3.296v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+              </svg>
+              linkedin.com/in/michael-marszalek
+            </a>
+            <a class="profile-link scholar" href="https://scholar.google.com/citations?user=LO5q3FYAAAAJ&amp;hl=de"
+              target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M12 4 2 9l10 5 10-5-10-5Z" />
+                <path d="M6 11.5V16c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6v-4.5" />
+                <path d="M21 9.5v5" />
+              </svg>
+              Google Scholar — publications
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>AI Ingenieurbüro &mdash; Geospatial Data Science &amp; ML Consulting</p>
+    <button class="imp-link" id="imp-open">Legal Notice</button>
+    <button class="imp-link" id="dse-open">Privacy Policy</button>
+  </footer>
+
+  <div class="imp-overlay" id="imp-overlay" role="dialog" aria-modal="true" aria-label="Legal Notice">
+    <div class="imp-box">
+      <button class="imp-close" id="imp-close" aria-label="Close">&times;</button>
+      <h2>Legal Notice</h2>
+
+      <h3>Information pursuant to § 5 DDG</h3>
+      <p>
+        AI Ingenieurbüro<br>
+        Dr.-Ing. Michael Marszalek<br>
+        c/o MDC#geospatial<br>
+        Welserstraße 3<br>
+        87463 Dietmannsried, Germany
+      </p>
+
+      <h3>Contact</h3>
+      <p>
+        E-Mail: <a href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>
+      </p>
+
+      <h3>VAT</h3>
+      <p>USt-IdNr. DE457092812</p>
+
+      <h3>Responsible for content pursuant to § 18 (2) MStV</h3>
+      <p>Dr.-Ing. Michael Marszalek</p>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div class="imp-overlay" id="dse-overlay" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+    <div class="imp-box">
+      <button class="imp-close" id="dse-close" aria-label="Close">&times;</button>
+      <h2>Privacy Policy</h2>
+
+      <h3>1. Controller</h3>
+      <p>
+        Dr.-Ing. Michael Marszalek<br>
+        c/o MDC#geospatial, Welserstraße 3, 87463 Dietmannsried, Germany<br>
+        E-Mail: <a href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>
+      </p>
+
+      <h3>2. Cookies and local storage</h3>
+      <p>This website uses no cookies and no tracking technology. If you pick a language with the EN/DE
+        switch, that choice alone is saved in your browser's local storage (key &ldquo;lang&rdquo;) so the
+        site opens in the language you chose. It never leaves your device, is not transmitted to us or to
+        any third party, and you can delete it at any time in your browser settings. Storing it is
+        strictly necessary to provide the language function you asked for, so no consent under
+        § 25 (2) no. 2 TDDDG is required. Nothing else is written to or read from your device, and your IP
+        address is not used to determine the language.</p>
+
+      <h3>3. Contact via email</h3>
+      <p>When you contact us by email, your message and email address are processed solely for the
+        purpose of responding to your enquiry. No data is shared with third parties. The legal basis is
+        Art. 6(1)(f) GDPR (legitimate interest in responding to enquiries).</p>
+
+      <h3>4. Web analytics</h3>
+      <p>This website uses Plausible Analytics, a privacy-focused analytics service by Plausible Insights
+        OÜ, Estonia, running on servers inside the European Union. Plausible sets no cookies and creates
+        no cross-site or cross-session identifier, so individual visitors cannot be recognised or tracked
+        over time. Recorded are the page requested, the referring website, browser, operating system,
+        device type and country. Your IP address is used only transiently to derive the country and to
+        generate a daily-rotating, non-reversible hash, and is never written to disk. The resulting data
+        is aggregated and cannot be traced back to you. No data is passed to third parties and no data
+        leaves the EU. The legal basis is Art. 6(1)(f) GDPR — our legitimate interest in understanding,
+        in aggregate, how this website is used. Details: <a href="https://plausible.io/data-policy" target="_blank"
+          rel="noopener">plausible.io/data-policy</a>.</p>
+
+      <h3>5. Hosting</h3>
+      <p>This website is hosted via GitHub Pages (GitHub, Inc., USA). When accessing the site, GitHub
+        may log technical access data including your IP address. For more information: <a
+          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+
+      <h3>6. Your rights</h3>
+      <p>You have the right of access, rectification, erasure, restriction of processing, data
+        portability and objection regarding your personal data. Because the analytics data described
+        above is aggregated and holds no identifier tied to you, we are generally unable to link it to a
+        specific person. For any privacy-related question contact us at <a
+          href="mailto:michael_marszalek@web.de">michael_marszalek@web.de</a>. You may also lodge a
+        complaint with the competent supervisory authority.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function wire(openId, overlayId, closeId) {
+        var overlay = document.getElementById(overlayId);
+        document.getElementById(openId).addEventListener('click', function () {
+          overlay.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+        function close() {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+        document.getElementById(closeId).addEventListener('click', close);
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) close();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') close();
+        });
+      }
+      wire('imp-open', 'imp-overlay', 'imp-close');
+      wire('dse-open', 'dse-overlay', 'dse-close');
+    })();
+  </script>
+
+</body>
+
+</html>
